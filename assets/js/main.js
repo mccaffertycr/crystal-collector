@@ -10,10 +10,10 @@ rndm = Math.floor(Math.random()*120)+19;
 $("#rndm").text(rndm);
 // create gem images with jquery and assign a value between 1 and 12
 $("#gems").empty();
-var red = $("<img src='assets/images/_red.jpg' class='gem' val=" + (Math.floor(Math.random()*12)+1) + ">");
-var blue = $("<img src='assets/images/_blue.jpg' class='gem' val=" + (Math.floor(Math.random()*12)+1) + ">");
-var green = $("<img src='assets/images/_green.jpg' class='gem' val=" + (Math.floor(Math.random()*12)+1) + ">");
-var yellow = $("<img src='assets/images/_yel.jpg' class='gem' val=" + (Math.floor(Math.random()*12)+1) + ">");
+var red = $("<img src='assets/images/_red.jpg' class='gem' data=" + (Math.floor(Math.random()*12)+1) + ">");
+var blue = $("<img src='assets/images/_blue.jpg' class='gem' data=" + (Math.floor(Math.random()*12)+1) + ">");
+var green = $("<img src='assets/images/_green.jpg' class='gem' data=" + (Math.floor(Math.random()*12)+1) + ">");
+var yellow = $("<img src='assets/images/_yel.jpg' class='gem' data=" + (Math.floor(Math.random()*12)+1) + ">");
 // append the gems to the gems div
 $("#gems").append(red, blue, green, yellow);
 // display score
@@ -23,18 +23,21 @@ $("#score").text("Your total score is: " + score);
 $("#win-loss").text("Wins: " + wins + " Losses: " + losses);
 }
 
-$(".gem").on("click", function() {
-    score = score + $(this).val();
+// start game when document loads
+$(document).ready(function() {
+    startGame();
+});
+
+
+// event listener
+$(document).on("click", ".gem", function() {
+    score += parseInt($(this).attr("data"));
     $("#score").text("Your total score is: " + score);
     if (score === rndm) {
         wins++;
-        scartGame();
+        startGame();
     } else if (score > rndm) {
         losses++;
         startGame();
     }
-});
-
-$(document).ready(function() {
-    startGame();
 });
