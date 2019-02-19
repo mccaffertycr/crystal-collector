@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Crystal Collector</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="assets/css/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Crystal Collector</title>
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-</head>
-
-<body>
-
-<div class="container">
-    <div class="row">
+  <body>
+    <div class="container">
+      <div class="row">
         <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-4">CrystalsCollector!</h1>
-                    <p class="lead">
-                        A random number is chosen at the start of each game.<br><br>
-                        There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.<br><br>
-                        You win the game by matching your total score to the random number assigned at the start the game,
-                         you lose the game if your score goes above the random number.
-                    </p>
-                    </div>
-                  </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            <div id="rndm" class="col-md-2"></div>
-            <div id="win-loss" class="col-md-2"></div>
-            <div id="gems" class="col-md-4"></div>
-            <div id="score" class="col-md-2"></div>
+          <div class="container">
+            <h1 class="display-4">Crystal Collector!</h1>
+            <p class="lead">
+              A random number is chosen at the start of each game.<br /><br />
+              There are four crystals below. By clicking on a crystal you will
+              add a specific amount of points to your total score.<br /><br />
+              You win the game by matching your total score to the random number
+              assigned at the start the game, you lose the game if your score
+              goes above the random number.
+            </p>
+          </div>
         </div>
+      </div>
+      <div class="row">
+        <div class="container">
+          <div id="rndm" class="col-md-2"></div>
+          <div id="win-loss" class="col-md-2"></div>
+          <div id="gems" class="col-md-4"></div>
+          <div id="score" class="col-md-2"></div>
+        </div>
+      </div>
     </div>
-    
-</div>
 
-<script src="assets/js/main.js"></script>  
-
-</body>
-
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
